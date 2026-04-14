@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from api import predict
+from app.api import predict
 
 app = FastAPI()
 

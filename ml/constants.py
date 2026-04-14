@@ -8,6 +8,7 @@ CSV_PATH_STR = Path("datasets/heart_disease_uci.csv")
 SEED = 42
 TEST_PERCENT = 0.2
 
+ORDERED_COLS = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalch', 'exang', 'oldpeak', 'slope', 'ca', 'thal']
 TARGET_COL = "num"
 
 IRRELEVANT_COLS = ['id', 'dataset']

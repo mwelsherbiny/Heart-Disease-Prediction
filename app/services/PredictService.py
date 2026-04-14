@@ -3,11 +3,10 @@ import pandas as pd
 import joblib
 
 class PredictService:
-    def __init__(self, model_path='Random_Forest.pkl'):
+    def __init__(self, model_path='models/Random_Forest.pkl'):
         self.model = joblib.load(model_path)
 
-    def predict(self, data):
-        df = pd.DataFrame([data])
+    def predict(self, df):
         prediction = self.model.predict(df)
         proba = self.model.predict_proba(df)
 
