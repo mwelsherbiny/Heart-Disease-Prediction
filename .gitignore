@@ -1,0 +1,23 @@
+# Virtual environment
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data & models
+datasets/
+models/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# OS
+.DS_Store
