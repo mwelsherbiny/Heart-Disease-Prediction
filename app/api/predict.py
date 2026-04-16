@@ -2,7 +2,6 @@ from fastapi import APIRouter
 import pandas as pd
 
 from app.schemas.PredictRequest import PredictRequest
-from app.schemas.PredictResponse import PredictResponse
 from app.services.PredictService import PredictService
 
 from ml.constants import ORDERED_COLS
@@ -14,7 +13,7 @@ router = APIRouter(
     tags=["Prediction"]
 )
 
-@router.post("/", response_model=PredictResponse)
+@router.post("/")
 async def predict(predict_request: PredictRequest):
     data = predict_request.model_dump()
 

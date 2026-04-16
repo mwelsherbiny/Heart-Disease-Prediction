@@ -3,6 +3,7 @@ from app.api import predict
 
 app = FastAPI()
 
+
 app.include_router(
     predict.router, 
     prefix="/api"
