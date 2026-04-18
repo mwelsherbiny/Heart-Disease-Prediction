@@ -30,13 +30,17 @@ class PredictService:
 
             top_idx = np.argsort(np.abs(row_values))[::-1][:top_k]
 
-            top_features = [
-                {
-                    "feature": self.feature_names[j],
+            top_features = []
+
+            for j in top_idx:
+                feature_name = self.feature_names[j]
+                if self.feature_names[j].startswith("one_hot__sex_Male") and X_transformed[0, j] == 0:
+                    feature_name = "one_hot__sex_Female"
+                feature_dict = {
+                    "feature": feature_name,
                     "impact": float(row_values[j])
                 }
-                for j in top_idx
-            ]
+                top_features.append(feature_dict)
 
             results.append(top_features)
 
