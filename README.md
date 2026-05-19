@@ -1,18 +1,21 @@
-Heart Disease Prediction
+# Heart Disease Prediction
 
 A machine learning project that predicts the likelihood of heart disease using patient clinical data.
+
 The project includes data preprocessing, model training, model evaluation, and a FastAPI endpoint for predictions.
 
-Features
-	•	Predicts heart disease risk from clinical attributes
-	•	Includes preprocessing and feature engineering
-	•	Provides model evaluation workflow
-	•	Serves predictions through a FastAPI API
-	•	Returns prediction probability
-	•	Includes SHAP-based feature impact explanations
+## Features
 
-Project Structure
+- Predicts heart disease risk from clinical attributes
+- Includes preprocessing and feature engineering
+- Provides model evaluation workflow
+- Serves predictions through a FastAPI API
+- Returns prediction probability
+- Includes SHAP-based feature impact explanations
 
+## Project Structure
+
+```text
 Heart-Disease-Prediction/
 ├── app/
 │   ├── api/
@@ -24,46 +27,64 @@ Heart-Disease-Prediction/
 ├── Heart_Disease_Prediction_Model.ipynb
 ├── requirements.txt
 └── README.md
+```
 
-Installation
+## Installation
 
 Clone the repository:
 
+```bash
 git clone https://github.com/mwelsherbiny/Heart-Disease-Prediction.git
 cd Heart-Disease-Prediction
+```
 
 Create a virtual environment:
 
+```bash
 python -m venv venv
+```
 
 Activate the virtual environment:
 
+```bash
 # Windows
 venv\Scripts\activate
+```
 
+```bash
 # macOS / Linux
 source venv/bin/activate
+```
 
 Install dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
-Usage
+## Usage
 
 Run the FastAPI server:
 
+```bash
 uvicorn app.main:app --reload
+```
 
 Open the API documentation in your browser:
 
+```text
 http://127.0.0.1:8000/docs
+```
 
-Prediction Endpoint
+## Prediction Endpoint
 
+```http
 POST /api/predict/
+```
 
-Example Request
+### Example Request
 
+```json
 {
   "age": 52,
   "trestbps": 130,
@@ -79,9 +100,11 @@ Example Request
   "restecg": "normal",
   "exang": false
 }
+```
 
-Example Response
+### Example Response
 
+```json
 {
   "prediction": 0,
   "probability": 0.23,
@@ -96,29 +119,36 @@ Example Response
     }
   ]
 }
+```
 
-Model
+## Model
 
 The API loads the trained model from:
 
+```text
 models/Random_Forest.pkl
+```
 
 The model predicts a binary target:
 
+```text
 0 = No heart disease
 1 = Heart disease
+```
 
-Tech Stack
-	•	Python
-	•	Pandas
-	•	NumPy
-	•	Scikit-learn
-	•	FastAPI
-	•	Uvicorn
-	•	SHAP
-	•	Joblib
+## Tech Stack
 
-Disclaimer
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- FastAPI
+- Uvicorn
+- SHAP
+- Joblib
+
+## Disclaimer
 
 This project is for educational and experimental purposes only.
+
 It should not be used as a substitute for professional medical diagnosis or clinical decision-making.
