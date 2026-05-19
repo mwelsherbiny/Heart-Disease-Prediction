@@ -1,19 +1,18 @@
-# Heart Disease Prediction
+Heart Disease Prediction
 
-A machine learning project that predicts the likelihood of heart disease from patient clinical data. The project includes data preprocessing, model training, evaluation, and a FastAPI prediction endpoint.
+A machine learning project that predicts the likelihood of heart disease using patient clinical data.
+The project includes data preprocessing, model training, model evaluation, and a FastAPI endpoint for predictions.
 
-## Features
+Features
+	•	Predicts heart disease risk from clinical attributes
+	•	Includes preprocessing and feature engineering
+	•	Provides model evaluation workflow
+	•	Serves predictions through a FastAPI API
+	•	Returns prediction probability
+	•	Includes SHAP-based feature impact explanations
 
-- Heart disease prediction using clinical patient attributes
-- Data cleaning and preprocessing
-- Feature engineering
-- Model evaluation
-- FastAPI prediction API
-- SHAP-based feature impact explanations
+Project Structure
 
-## Project Structure
-
-```text
 Heart-Disease-Prediction/
 ├── app/
 │   ├── api/
@@ -28,8 +27,12 @@ Heart-Disease-Prediction/
 
 Installation
 
+Clone the repository:
+
 git clone https://github.com/mwelsherbiny/Heart-Disease-Prediction.git
 cd Heart-Disease-Prediction
+
+Create a virtual environment:
 
 python -m venv venv
 
@@ -38,7 +41,7 @@ Activate the virtual environment:
 # Windows
 venv\Scripts\activate
 
-# macOS/Linux
+# macOS / Linux
 source venv/bin/activate
 
 Install dependencies:
@@ -51,7 +54,7 @@ Run the FastAPI server:
 
 uvicorn app.main:app --reload
 
-Open the API documentation:
+Open the API documentation in your browser:
 
 http://127.0.0.1:8000/docs
 
@@ -59,7 +62,7 @@ Prediction Endpoint
 
 POST /api/predict/
 
-Example request:
+Example Request
 
 {
   "age": 52,
@@ -77,7 +80,7 @@ Example request:
   "exang": false
 }
 
-Example response:
+Example Response
 
 {
   "prediction": 0,
@@ -117,4 +120,5 @@ Tech Stack
 
 Disclaimer
 
-This project is for educational and experimental purposes only. It should not be used as a substitute for professional medical diagnosis or clinical decision-making.
+This project is for educational and experimental purposes only.
+It should not be used as a substitute for professional medical diagnosis or clinical decision-making.
